@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!-- OJO: tiene que ser el MISMO target framework que el proyecto principal
+         (ej. net48 si GestionEducativa.csproj apunta a .NET Framework 4.8).
+         Si el principal es distinto, cambiá esta línea para que coincida. -->
+    <TargetFramework>net48</TargetFramework>
+    <IsPackable>false</IsPackable>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.10.0" />
+    <PackageReference Include="xunit" Version="2.8.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2" />
+    <PackageReference Include="NSubstitute" Version="5.1.0" />
+    <PackageReference Include="MySql.Data" Version="9.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- OJO: ajustá esta ruta y el nombre del csproj al de tu proyecto real
+         (el .csproj de GestionEducativa no vino en el .zip que me pasaste,
+         así que no puedo saber el nombre/ubicación exactos). Normalmente
+         es algo como ..\..\GestionEducativa.csproj si este proyecto de tests
+         queda en Tests\GestionEducativa.Tests\ al mismo nivel que la solución. -->
+    <ProjectReference Include="..\..\GestionEducativa.csproj" />
+  </ItemGroup>
+
+</Project>
